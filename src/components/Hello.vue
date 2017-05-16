@@ -1,15 +1,32 @@
 <template>
   <div class="hello">
-    <h1>Lets Make some reviews</h1>
+    <input type="text" v-model="username" placeholder="username">
+    <input type="text" v-model="restaurant" placeholder="restaurant">
+    <input type="number" v-model="rating" placeholder="rating">
+    <button @click="addReview"></button>
   </div>
 </template>
 
 <script>
+import { store } from '../store/reviews-store'
 export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      reviews: store.methods.getReviews(),
+      username: '',
+      restaurant: '',
+      rating: Number
+    }
+  },
+  methods: {
+    addReview(){
+      debugger
+      store.methods.addReview({
+        username: this.username,
+        restaurant: this.restaurant,
+        rating: this.rating
+      })
     }
   }
 }
