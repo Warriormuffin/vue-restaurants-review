@@ -4,7 +4,8 @@
       <div class="row">
         <div class="cards">
           <div v-for="add in adverts" v-if="showAdverts">
-          <p>User: {{review.username}} Restaurant: {{review.restaurant}} Rating: {{review.rating}}</p>
+          <p>Name: {{add.name}} Price: {{add.price}}</p>
+          <img :src='add.pic'>
         </div>
       </div>
     </div>
