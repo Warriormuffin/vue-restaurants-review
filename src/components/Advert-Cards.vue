@@ -1,9 +1,9 @@
 <template>
-  <div class="review-cards">
-    <button @click="showReviewsToggle">Show Reviews</button>
+ <div class="advert-cards">
+    <button @click="showAddsToggle">Show Adds</button>
       <div class="row">
         <div class="cards">
-          <div v-for="review in reviews" v-if="showReviews">
+          <div v-for="add in adverts" v-if="showAdverts">
           <p>User: {{review.username}} Restaurant: {{review.restaurant}} Rating: {{review.rating}}</p>
         </div>
       </div>
@@ -11,33 +11,26 @@
   </div>
 </template>
 
-
-
 <script>
   import { store } from '../store/reviews-store'
   export default {
-  name: 'review-cards',
+  name: 'advert-cards',
   data () {
     return {
-      reviews: store.methods.getReviews(),
-      showReviews: false
+      adverts: store.methods.getAdverts(),
+      showAdverts: false
     }
    },
 
     methods: {
-      showReviewsToggle(){
-        this.showReviews = !this.showReviews
+      showAddsToggle(){
+        this.showAdverts = !this.showAdverts
       }
     }
 }
 
-
 </script>
 
-
-
-<style scoped>
-
-
+<style lang="">
 
 </style>

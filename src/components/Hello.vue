@@ -3,7 +3,7 @@
     <input type="text" v-model="username" placeholder="username">
     <input type="text" v-model="restaurant" placeholder="restaurant">
     <input type="number" v-model="rating" placeholder="rating">
-    <button @click="addReview"></button>
+    <button @click="addReview">Add Your Review</button>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
       reviews: store.methods.getReviews(),
       username: '',
       restaurant: '',
-      rating: Number
+      rating: 1
     }
   },
   methods: {
